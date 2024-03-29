@@ -1,0 +1,137 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Group2_FinalProject.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+   <title>Best Buy</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link href="Content/bootstrap.min.css" rel="stylesheet" />
+        <link href="Content/site.css" rel="stylesheet" />
+        <link href="Content/style.css" rel="stylesheet" />
+        <asp:ContentPlaceHolder ID="head" runat="server">
+        </asp:ContentPlaceHolder>
+
+    <style>
+        /* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+   
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+        
+        
+}
+
+.mycontainer {
+  
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+   
+}
+
+/* Navbar Styling */
+.navbar {
+    background-color: #0046BE;
+    padding: 20px;
+     color: #fff;
+}
+
+.navbar-brand h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+     color: #fff;
+    padding: 0;
+}
+
+
+.nav-item.nav-link {
+    color: #fff;
+    transition: color 0.3s;
+}
+
+.nav-item.nav-link:hover {
+    color: #17a2b8;
+}
+
+/* Footer Styling */
+.footer {
+    text-align: center;
+    padding: 30px;
+    background-color: #0046BE;
+    color: #fff;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+  
+}
+
+/* Animations */
+@keyframes slideDown {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .navbar-collapse {
+        animation: slideDown 0.5s ease-in-out;
+    }
+}
+
+    </style>
+
+</head>
+<body>
+    <div class="mycontainer">
+            <nav class="navbar navbar-expand-lg">
+                <a class="navbar-brand" href="Home.aspx">
+                    <h1>Best Buy</h1>
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+                    aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <asp:PlaceHolder ID="HomePlaceholder" runat="server">
+                            <a class="nav-item nav-link" href="Home.aspx">Home</a>
+                        </asp:PlaceHolder>
+                        <asp:PlaceHolder ID="ProductsPlaceholder" runat="server">
+                            <a class="nav-item nav-link" href="Product.aspx">Product</a>
+                        </asp:PlaceHolder>
+                        <asp:PlaceHolder ID="CartPlaceholder" runat="server">
+                            <a class="nav-item nav-link" href="Cart.aspx">Cart</a>
+                        </asp:PlaceHolder>
+                        <asp:PlaceHolder ID="AdminPlaceholder" runat="server">
+                            <a class="nav-item nav-link" href="Admin.aspx">Admin</a>
+                        </asp:PlaceHolder>
+                        <asp:PlaceHolder ID="LoginPlaceholder" runat="server">
+                            <a class="nav-item nav-link" href="Login.aspx">Login</a>
+                        </asp:PlaceHolder>
+                       
+                    </div>
+                </div>
+                
+            </nav>
+            <asp:ContentPlaceHolder ID="MainContent" runat="server"></asp:ContentPlaceHolder>
+            <footer class="footer">
+                &copy; Made by: Poojan Patel, 
+                                Urja Tamboli, 
+                                Nil Meruliya,  
+                                Utsav Patel, 
+                                Yathart Shah, 
+                                
+            </footer>
+        </div>
+        <script src="Scripts/jquery-1.9.1.min.js"></script>
+        <script src="Scripts/bootstrap.min.js"></script>
+        <asp:ContentPlaceHolder ID="ScriptContent" runat="server"></asp:ContentPlaceHolder>
+</body>
+</html>
